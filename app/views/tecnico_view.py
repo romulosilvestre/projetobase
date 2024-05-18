@@ -17,8 +17,9 @@ def cadastrar_tecnico_ok():
     
     if form.validate_on_submit():
         nome = form.nome.data
+        email = form.email.data
         nivel_id = form.nivel_id.data
-        tecnico = tecnico_model.Tecnico(nome=nome, nivel_id=nivel_id)
+        tecnico = tecnico_model.Tecnico(nome=nome,email=email,fk_nivel_id=nivel_id)
         try:
             db.session.add(tecnico)
             db.session.commit()
