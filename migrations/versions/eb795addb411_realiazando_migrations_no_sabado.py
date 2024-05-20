@@ -1,8 +1,8 @@
-"""iniciando alpha infosystem
+"""realiazando migrations no sabado
 
-Revision ID: bdd4ac043f3b
+Revision ID: eb795addb411
 Revises: 
-Create Date: 2024-05-15 19:49:01.829193
+Create Date: 2024-05-18 18:03:19.277269
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'bdd4ac043f3b'
+revision = 'eb795addb411'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -75,6 +75,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('nome', sa.String(length=200), nullable=True),
     sa.Column('email', sa.String(length=200), nullable=True),
+    sa.Column('mini_bio', sa.Text(), nullable=False),
     sa.Column('fk_nivel_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['fk_nivel_id'], ['nivel.id'], ),
     sa.PrimaryKeyConstraint('id')

@@ -1,4 +1,5 @@
 from app import db #SQLAlchemy - Migrate:Migrar Classe para Tabela
+from sqlalchemy import Text
 
 class Tecnico(db.Model):
     __tablename__ = "tecnico"
